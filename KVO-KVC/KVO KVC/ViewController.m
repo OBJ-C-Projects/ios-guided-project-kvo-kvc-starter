@@ -68,6 +68,14 @@
     NSLog(@"%@", self.hrController);
     
     
+    //Key value coding
+    
+    NSLog(@"%@", craig.name);
+    NSLog(@"%@", [craig name]);
+    
+    NSLog(@"%@", [craig valueForKey:@"name"]);
+ 
+    NSLog(@"%@",self.hrController.allEmployees);
 }
 
 

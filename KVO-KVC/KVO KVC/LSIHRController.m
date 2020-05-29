@@ -33,7 +33,18 @@
     return [self.internalDepartments copy];
 }
 
-
+- (NSArray<LSIEmployee *> *)allEmployees{
+    
+    NSMutableArray *employees = [@[]mutableCopy];
+    
+    for (int i = 0; i < self.departments.count; i++){
+        for (LSIEmployee *employee in self.departments){
+            [employees addObject:employee];
+        }
+    }
+    
+    return [employees copy];
+}
 
 - (NSString *)description {
     
