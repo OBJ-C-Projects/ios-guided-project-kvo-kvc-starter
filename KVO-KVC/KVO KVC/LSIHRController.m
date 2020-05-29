@@ -35,16 +35,18 @@
 
 - (NSArray<LSIEmployee *> *)allEmployees{
     
-    NSMutableArray *employees = [@[]mutableCopy];
+//    NSMutableArray *employees = [@[]mutableCopy];
     
-    for (int i = 0; i < self.departments.count; i++){
-        for (LSIEmployee *employee in self.departments){
-            [employees addObject:employee];
-        }
+//    for (int i = 0; i < self.departments.count; i++){
+//        for (LSIEmployee *employee in self.departments){
+//            [employees addObject:employee];
+//        }
+//    }
+//
+//    return [employees copy];
+        //distinctUnioOfArrays = make sure there are no duplicates
+        return [self valueForKeyPath:@"departments.@distinctUnioOfArrays.employees"];
     }
-    
-    return [employees copy];
-}
 
 - (NSString *)description {
     

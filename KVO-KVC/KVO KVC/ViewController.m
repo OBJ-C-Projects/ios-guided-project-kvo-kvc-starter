@@ -70,12 +70,25 @@
     
     //Key value coding
     
-    NSLog(@"%@", craig.name);
-    NSLog(@"%@", [craig name]);
+    NSLog(@"%@", craig.name); //Dot syntax
+    NSLog(@"%@", [craig name]); // KVC format
     
-    NSLog(@"%@", [craig valueForKey:@"name"]);
+    NSLog(@"%@", [craig valueForKey:@"name"]);// KVC format
  
     NSLog(@"%@",self.hrController.allEmployees);
+    
+    
+    //Keypad
+    NSLog(@"Department: %@", [self.hrController valueForKeyPath:@"departments"]);
+    
+    //[[Emplyee]]
+    NSLog(@"Keypad: %@", [self.hrController valueForKeyPath:@"departments.employees"]);
+    
+    //[[Emplyee]] (managers
+    NSLog(@"Managers: %@", [self.hrController valueForKeyPath:@"departments.manager"]);
+    //Collection operators
+    //[[Emplyee]] (managers
+    NSLog(@"All employees: %@", [self.hrController valueForKeyPath:@"departments.@distinctUnioOfArrays.employees"]);
 }
 
 
